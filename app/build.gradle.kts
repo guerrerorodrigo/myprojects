@@ -3,6 +3,7 @@ import com.rodrigoguerrero.convention.AppConfig
 plugins {
     id("my.android.application")
     id("my.android.hilt")
+    id("my.android.application.compose")
 }
 
 android {
