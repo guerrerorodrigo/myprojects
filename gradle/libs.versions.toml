@@ -4,6 +4,7 @@ androidx-arch-core-testing-version = "2.2.0"
 androidx-compose-bom-version = "2023.05.01"
 androidx-compose-compiler-version = "1.4.7"
 androidx-core-ktx-version = "1.10.1"
+androidx-core-splashscreen-version = "1.0.1"
 androidx-hilt-navigation-compose-version = "1.0.0"
 androidx-lifecycle-runtime-ktx-version = "2.6.1"
 androidx-lifecycle-version = "2.6.1"
@@ -34,6 +35,7 @@ androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-mani
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core-ktx-version" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "androidx-core-splashscreen-version" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "androidx-hilt-navigation-compose-version" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle-version" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-runtime-ktx-version" }
