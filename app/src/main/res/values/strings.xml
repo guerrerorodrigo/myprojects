@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">My Projects</string>
     <string name="title_activity_main">MainActivity</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Project Planning App for Everyone</string>
+    <string name="onboarding_description_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat  est sit aliqua dolor do amet.</string>
+    <string name="onboarding_title_2">Organize Your Task &amp; Projects Easily</string>
+    <string name="onboarding_description_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat  est sit aliqua dolor do amet.</string>
+    <string name="onboarding_title_3">Everything You Can Do in this App</string>
+    <string name="onboarding_description_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat  est sit aliqua dolor do amet.</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="get_started">Get Started</string>
+
 </resources>

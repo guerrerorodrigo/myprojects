@@ -12,6 +12,14 @@ object MyProjectsTheme {
     val typography: MyProjectsTypography
         @Composable
         get() = LocalTypography.current
+
+    val padding: MyProjectsPadding
+        @Composable
+        get() = LocalPadding.current
+
+    val shapes: MyProjectShapes
+        @Composable
+        get() = LocalShapes.current
 }
 
 @Composable
@@ -21,7 +29,9 @@ fun MyProjectsTheme(
 
     CompositionLocalProvider(
         LocalColors provides MyProjectsColors(),
-        LocalTypography provides MyProjectsTypography()
+        LocalTypography provides MyProjectsTypography(),
+        LocalPadding provides MyProjectsPadding(),
+        LocalShapes provides MyProjectShapes()
     ) {
         MaterialTheme(
             content = content
