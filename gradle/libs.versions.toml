@@ -18,7 +18,7 @@ com-google-dagger-version = "2.46"
 io-mockk-version = "1.13.5"
 io-strikt-version = "0.34.1"
 junit-version = "4.13.2"
-org-jetbrains-kotlinx-coroutines-test-version = "1.7.0"
+org-jetbrains-kotlinx-coroutines-test-version = "1.7.1"
 org-jetbrains-kotlinx-coroutines-version = "1.7.1"
 org-jetbrains-kotlin-android-version = "1.8.21"
 
