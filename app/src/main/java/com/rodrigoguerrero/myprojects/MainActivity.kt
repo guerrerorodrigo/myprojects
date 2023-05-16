@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.rodrigoguerrero.myprojects.onboarding.ui.screens.OnBoardingScreen
+import com.rodrigoguerrero.myprojects.account.ui.screens.LoginScreen
 import com.rodrigoguerrero.myprojects.ui.theme.MyProjectsTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,10 +21,14 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MyProjectsTheme.colors.white
                 ) {
-                    OnBoardingScreen(
-                        onLogin = { },
+                    LoginScreen(
+                        onForgotPassword = { },
+                        onSignIn = { },
+                        onFacebook = { },
+                        onGoogle = { },
                         onSignUp = { },
-                        onGetStarted = { }
+                        onApple = { },
+                        onBack = { }
                     )
                 }
             }
