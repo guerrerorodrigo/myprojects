@@ -22,4 +22,13 @@
     <string name="dont_have_an_account">Don\'t have an account?</string>
     <string name="sign_up_login_screen">Sign Up</string>
 
+    <!-- Projects -->
+    <string name="status_to_do">To Do</string>
+    <string name="status_in_progress">In Progress</string>
+    <string name="status_done">Done</string>
+    <string name="priority_low">Low</string>
+    <string name="priority_normal">Normal</string>
+    <string name="priority_high">High</string>
+    <string name="bullet">•</string>
+    <string name="project_percentage">%1$d\%%</string>
 </resources>
