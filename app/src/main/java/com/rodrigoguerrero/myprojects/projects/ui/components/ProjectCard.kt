@@ -1,7 +1,7 @@
 package com.rodrigoguerrero.myprojects.projects.ui.components
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -45,14 +45,9 @@ fun ProjectCard(
                 MyProjectsTheme.colors.white
             }
         ),
-        border = if (project.hasDefaultBackgroundColor) {
-            BorderStroke(
-                width = dimensionResource(id = R.dimen.border_width),
-                color = MyProjectsTheme.colors.black
-            )
-        } else {
-            null
-        }
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = dimensionResource(id = R.dimen.card_elevation)
+        )
     ) {
         Column(
             modifier = Modifier.padding(all = MyProjectsTheme.padding.m),
@@ -111,7 +106,9 @@ private fun PreviewTransparentProjectCard() {
     )
 
     MyProjectsTheme {
-        ProjectCard(project = project, onClick = { })
+        Box(modifier = Modifier.padding(MyProjectsTheme.padding.m)) {
+            ProjectCard(project = project, onClick = { })
+        }
     }
 }
 
@@ -130,7 +127,9 @@ private fun PreviewColorProjectCard() {
     )
 
     MyProjectsTheme {
-        ProjectCard(project = project, onClick = { })
+        Box(modifier = Modifier.padding(MyProjectsTheme.padding.m)) {
+            ProjectCard(project = project, onClick = { })
+        }
     }
 }
 
@@ -148,6 +147,8 @@ private fun PreviewColorProjectCardNoPriority() {
     )
 
     MyProjectsTheme {
-        ProjectCard(project = project, onClick = { })
+        Box(modifier = Modifier.padding(MyProjectsTheme.padding.m)) {
+            ProjectCard(project = project, onClick = { })
+        }
     }
 }

@@ -7,4 +7,5 @@
     <dimen name="tag_icon_size">8dp</dimen>
     <dimen name="project_card_icon_size">10dp</dimen>
     <dimen name="project_card_circle_size">2dp</dimen>
+    <dimen name="card_elevation">1dp</dimen>
 </resources>
