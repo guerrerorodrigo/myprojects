@@ -37,40 +37,45 @@ fun MainScreen(
         modifier = modifier,
         topBar = { MainTopBar(name = name, numberOfNotifications = numberOfNotifications) }
     ) { padding ->
-        LazyColumn(
-            modifier = Modifier
-                .padding(
-                    top = padding.calculateTopPadding(),
-                    bottom = padding.calculateBottomPadding(),
-                    start = MyProjectsTheme.padding.m,
-                    end = MyProjectsTheme.padding.m
-                )
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(MyProjectsTheme.padding.m),
-            contentPadding = PaddingValues(vertical = MyProjectsTheme.padding.m)
-        ) {
-            item {
-                MainListHeader(
-                    title = stringResource(id = R.string.recent_projects),
-                    buttonText = stringResource(id = R.string.view_all),
-                    onViewAll = onViewAllProjects
-                )
-            }
 
-            items(recentProjects) { project ->
-                ProjectCard(project = project, onClick = { })
-            }
-            item {
-                MainListHeader(
-                    title = stringResource(R.string.today_tasks),
-                    buttonText = stringResource(id = R.string.view_all),
-                    onViewAll = onViewAllTasks
-                )
-            }
+        if (todayTasks.isNotEmpty() || recentProjects.isNotEmpty()) {
+            LazyColumn(
+                modifier = Modifier
+                    .padding(
+                        top = padding.calculateTopPadding(),
+                        bottom = padding.calculateBottomPadding(),
+                        start = MyProjectsTheme.padding.m,
+                        end = MyProjectsTheme.padding.m
+                    )
+                    .fillMaxSize(),
+                verticalArrangement = Arrangement.spacedBy(MyProjectsTheme.padding.m),
+                contentPadding = PaddingValues(vertical = MyProjectsTheme.padding.m)
+            ) {
+                item {
+                    MainListHeader(
+                        title = stringResource(id = R.string.recent_projects),
+                        buttonText = stringResource(id = R.string.view_all),
+                        onViewAll = onViewAllProjects
+                    )
+                }
 
-            items(todayTasks) { task ->
-                TaskCard(task = task, onClick = {}, onMenuClick = {})
+                items(recentProjects) { project ->
+                    ProjectCard(project = project, onClick = { })
+                }
+                item {
+                    MainListHeader(
+                        title = stringResource(R.string.today_tasks),
+                        buttonText = stringResource(id = R.string.view_all),
+                        onViewAll = onViewAllTasks
+                    )
+                }
+
+                items(todayTasks) { task ->
+                    TaskCard(task = task, onClick = {}, onMenuClick = {})
+                }
             }
+        } else {
+            EmptyScreen()
         }
     }
 }

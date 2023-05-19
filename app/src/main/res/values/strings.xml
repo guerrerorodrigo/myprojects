@@ -45,4 +45,6 @@
     <string name="project_name">Project Name</string>
     <string name="add_member">Add Member</string>
     <string name="create_project_bottom_sheet">Create project</string>
+    <string name="empty_title">Plan Your Task, Task Your Plan</string>
+    <string name="empty_description">Create tasks to manage and track your project easily, instantly and incredibly</string>
 </resources>
