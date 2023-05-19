@@ -35,4 +35,7 @@
     <!-- Main screen -->
     <string name="let_s_complete_your_today_tasks">Let\'s complete your today tasks</string>
     <string name="hello_user">Hello, %1$s!</string>
+    <string name="recent_projects">Recent Projects</string>
+    <string name="view_all">View All</string>
+    <string name="today_tasks">Today Tasks</string>
 </resources>
