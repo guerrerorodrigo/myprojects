@@ -21,14 +21,16 @@ import com.rodrigoguerrero.myprojects.projects.ui.models.Project
 import com.rodrigoguerrero.myprojects.projects.ui.models.Status
 import com.rodrigoguerrero.myprojects.projects.ui.models.Task
 import com.rodrigoguerrero.myprojects.ui.theme.MyProjectsTheme
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun MainScreen(
     modifier: Modifier = Modifier,
     name: String,
     numberOfNotifications: Int,
-    recentProjects: List<Project>,
-    todayTasks: List<Task>,
+    recentProjects: ImmutableList<Project>,
+    todayTasks: ImmutableList<Task>,
     onViewAllProjects: () -> Unit,
     onViewAllTasks: () -> Unit
 ) {
@@ -107,8 +109,8 @@ private fun PreviewMainScreen() {
         MainScreen(
             name = "Vanessa",
             numberOfNotifications = 3,
-            recentProjects = listOf(project, project, project, project),
-            todayTasks = listOf(task, task, task, task, task),
+            recentProjects = persistentListOf(project, project, project, project),
+            todayTasks = persistentListOf(task, task, task, task, task),
             onViewAllProjects = { },
             onViewAllTasks = { }
         )

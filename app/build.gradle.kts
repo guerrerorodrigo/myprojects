@@ -29,4 +29,5 @@ android {
 dependencies {
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.io.coil.ktx.compose)
+    implementation(libs.org.jetbrains.kotlinx.collections.immutable)
 }

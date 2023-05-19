@@ -12,6 +12,7 @@ import com.rodrigoguerrero.myprojects.projects.ui.models.Status
 import com.rodrigoguerrero.myprojects.projects.ui.models.Task
 import com.rodrigoguerrero.myprojects.projects.ui.screens.MainScreen
 import com.rodrigoguerrero.myprojects.ui.theme.MyProjectsTheme
+import kotlinx.collections.immutable.persistentListOf
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,8 +45,8 @@ class MainActivity : ComponentActivity() {
                     MainScreen(
                         name = "Vanessa",
                         numberOfNotifications = 0,
-                        recentProjects = listOf(project, project, project, project),
-                        todayTasks = listOf(task, task, task, task, task, task),
+                        recentProjects = persistentListOf(project, project, project, project),
+                        todayTasks = persistentListOf(task, task, task, task, task, task),
                         onViewAllProjects = { },
                         onViewAllTasks = { }
                     )

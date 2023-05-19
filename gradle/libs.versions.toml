@@ -21,6 +21,7 @@ io-coil-kt-compose-version = "2.3.0"
 io-mockk-version = "1.13.5"
 io-strikt-version = "0.34.1"
 junit-version = "4.13.2"
+org-jetbrains-kotlinx-collections-immutable-version = "0.3.5"
 org-jetbrains-kotlinx-coroutines-test-version = "1.7.1"
 org-jetbrains-kotlinx-coroutines-version = "1.7.1"
 org-jetbrains-kotlin-android-version = "1.8.21"
@@ -55,10 +56,12 @@ com-android-tools-build-gradle = { module = "com.android.tools.build:gradle", ve
 com-google-dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "com-google-dagger-version" }
 com-google-dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "com-google-dagger-version" }
 com-google-dagger-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "com-google-dagger-version" }
+org-jetbrains-kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "org-jetbrains-kotlinx-collections-immutable-version" }
 org-jetbrains-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "org-jetbrains-kotlinx-coroutines-version" }
 org-jetbrains-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "org-jetbrains-kotlinx-coroutines-version" }
 org-jetbrains-kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "org-jetbrains-kotlinx-coroutines-test-version" }
 org-jetbrains-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "org-jetbrains-kotlin-android-version" }
+
 
 [bundles]
 android-test = [
