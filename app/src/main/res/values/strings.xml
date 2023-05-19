@@ -38,4 +38,11 @@
     <string name="recent_projects">Recent Projects</string>
     <string name="view_all">View All</string>
     <string name="today_tasks">Today Tasks</string>
+    <string name="create_project">Create Project</string>
+    <string name="visibility">Visibility</string>
+    <string name="visibility_public">Public</string>
+    <string name="visibility_private">Private</string>
+    <string name="project_name">Project Name</string>
+    <string name="add_member">Add Member</string>
+    <string name="create_project_bottom_sheet">Create project</string>
 </resources>

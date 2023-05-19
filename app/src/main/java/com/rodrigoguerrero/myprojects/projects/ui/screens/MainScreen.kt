@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.rodrigoguerrero.myprojects.R
-import com.rodrigoguerrero.myprojects.projects.ui.components.MainBottomBar
 import com.rodrigoguerrero.myprojects.projects.ui.components.MainListHeader
 import com.rodrigoguerrero.myprojects.projects.ui.components.MainTopBar
 import com.rodrigoguerrero.myprojects.projects.ui.components.ProjectCard
@@ -36,16 +35,7 @@ fun MainScreen(
 ) {
     Scaffold(
         modifier = modifier,
-        topBar = { MainTopBar(name = name, numberOfNotifications = numberOfNotifications) },
-        bottomBar = {
-            MainBottomBar(
-                onListClick = { },
-                onTaskClick = { },
-                onMessageClick = { },
-                onProfileClick = { },
-                onNewProjectClick = { }
-            )
-        }
+        topBar = { MainTopBar(name = name, numberOfNotifications = numberOfNotifications) }
     ) { padding ->
         LazyColumn(
             modifier = Modifier
