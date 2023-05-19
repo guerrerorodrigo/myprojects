@@ -9,4 +9,6 @@
     <dimen name="project_card_circle_size">2dp</dimen>
     <dimen name="card_elevation">1dp</dimen>
     <dimen name="bottom_bar_radius">24dp</dimen>
+    <dimen name="top_bar_badge_padding">13dp</dimen>
+    <dimen name="top_bar_image_size">38dp</dimen>
 </resources>

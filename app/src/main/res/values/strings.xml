@@ -31,4 +31,8 @@
     <string name="priority_high">High</string>
     <string name="bullet">•</string>
     <string name="project_percentage">%1$d\%%</string>
+
+    <!-- Main screen -->
+    <string name="let_s_complete_your_today_tasks">Let\'s complete your today tasks</string>
+    <string name="hello_user">Hello, %1$s!</string>
 </resources>
