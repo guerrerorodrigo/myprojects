@@ -91,6 +91,7 @@ private fun PreviewMainScreen() {
         completedPercentage = 0.18f,
         dueDate = "June 18, 2023",
         color = MyProjectsTheme.colors.brightPink,
+        numberOfAttachments = 3
     )
 
     val task = Task(

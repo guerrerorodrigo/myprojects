@@ -102,7 +102,8 @@ private fun PreviewTransparentProjectCard() {
         status = Status.InProgress,
         completedPercentage = 0.78f,
         dueDate = "June 18, 2023",
-        priority = Priority.High
+        priority = Priority.High,
+        numberOfAttachments = 0
     )
 
     MyProjectsTheme {
@@ -123,7 +124,8 @@ private fun PreviewColorProjectCard() {
         completedPercentage = 0.78f,
         dueDate = "June 18, 2023",
         color = MyProjectsTheme.colors.pest,
-        priority = Priority.High
+        priority = Priority.High,
+        numberOfAttachments = 0
     )
 
     MyProjectsTheme {
@@ -144,6 +146,7 @@ private fun PreviewColorProjectCardNoPriority() {
         completedPercentage = 0.18f,
         dueDate = "June 18, 2023",
         color = MyProjectsTheme.colors.brightPink,
+        numberOfAttachments = 0
     )
 
     MyProjectsTheme {

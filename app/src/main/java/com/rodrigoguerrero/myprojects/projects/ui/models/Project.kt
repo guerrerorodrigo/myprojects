@@ -7,6 +7,7 @@ data class Project(
     val title: String,
     val dueDate: String,
     val comments: Int,
+    val numberOfAttachments: Int,
     val status: Status,
     val completedPercentage: Float,
     val color: Color = Color.Transparent,
