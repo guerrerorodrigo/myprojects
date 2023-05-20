@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,7 +21,9 @@ import com.rodrigoguerrero.myprojects.ui.theme.MyProjectsTheme
 fun IconWithText(
     modifier: Modifier = Modifier,
     icon: ImageVector,
-    text: String
+    text: String,
+    textColor: Color = MyProjectsTheme.colors.black,
+    iconTint: Color = MyProjectsTheme.colors.black
 ) {
     Row(
         modifier = modifier,
@@ -30,9 +33,10 @@ fun IconWithText(
         Icon(
             imageVector = icon,
             contentDescription = null,
-            modifier = Modifier.size(dimensionResource(id = R.dimen.project_card_icon_size))
+            modifier = Modifier.size(dimensionResource(id = R.dimen.project_card_icon_size)),
+            tint = iconTint
         )
-        Text(text = text, style = MyProjectsTheme.typography.caption6)
+        Text(text = text, style = MyProjectsTheme.typography.caption6, color = textColor)
     }
 }
 

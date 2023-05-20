@@ -49,7 +49,8 @@ fun ButtonWithIcons(
                 Icon(
                     imageVector = icon,
                     contentDescription = null,
-                    modifier = Modifier.size(dimensionResource(id = R.dimen.button_with_icons_icon_size))
+                    modifier = Modifier.size(dimensionResource(id = R.dimen.button_with_icons_icon_size)),
+                    tint = MyProjectsTheme.colors.black.copy(alpha = 0.6f)
                 )
             }
 
@@ -62,7 +63,8 @@ fun ButtonWithIcons(
                 Icon(
                     imageVector = icon,
                     contentDescription = null,
-                    modifier = Modifier.size(dimensionResource(id = R.dimen.button_with_icons_icon_size))
+                    modifier = Modifier.size(dimensionResource(id = R.dimen.button_with_icons_icon_size)),
+                    tint = MyProjectsTheme.colors.black.copy(alpha = 0.6f)
                 )
             }
         }

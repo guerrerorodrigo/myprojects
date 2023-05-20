@@ -21,6 +21,7 @@ import androidx.navigation.compose.rememberNavController
 import com.rodrigoguerrero.myprojects.projects.ui.components.MainBottomBar
 import com.rodrigoguerrero.myprojects.projects.ui.screens.CreateProjectBottomSheet
 import com.rodrigoguerrero.myprojects.projects.ui.screens.MainScreen
+import com.rodrigoguerrero.myprojects.projects.ui.screens.ProjectsList
 import com.rodrigoguerrero.myprojects.ui.theme.MyProjectsTheme
 import kotlinx.collections.immutable.persistentListOf
 
@@ -44,8 +45,20 @@ class MainActivity : ComponentActivity() {
                     Scaffold(
                         bottomBar = {
                             MainBottomBar(
-                                onListClick = { },
-                                onTaskClick = { },
+                                onListClick = { navController.navigate("home") {
+                                    navController.graph.startDestinationRoute?.let { route ->
+                                        popUpTo(route)
+                                        launchSingleTop = true
+                                        restoreState = true
+                                    }
+                                } },
+                                onTaskClick = { navController.navigate("projects") {
+                                    navController.graph.startDestinationRoute?.let { route ->
+                                        popUpTo(route)
+                                    }
+                                    launchSingleTop = true
+                                    restoreState = true
+                                } },
                                 onMessageClick = { },
                                 onProfileClick = { },
                                 onNewProjectClick = {
@@ -65,8 +78,15 @@ class MainActivity : ComponentActivity() {
                                     numberOfNotifications = 0,
                                     recentProjects = persistentListOf(),
                                     todayTasks = persistentListOf(),
-                                    onViewAllProjects = { },
+                                    onViewAllProjects = { navController.navigate("projects") },
                                     onViewAllTasks = { }
+                                )
+                            }
+                            composable("projects") {
+                                ProjectsList(
+                                    projects = persistentListOf(),
+                                    onMore = { },
+                                    onSearch = { }
                                 )
                             }
                         }

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="PreviewIconButton">
-        <State />
-      </entry>
       <entry key="PreviewLoginScreen (1)">
         <State />
       </entry>
@@ -15,6 +12,9 @@
         <State />
       </entry>
       <entry key="PreviewMainTopBar">
+        <State />
+      </entry>
+      <entry key="PreviewProjectsList">
         <State />
       </entry>
       <entry key="app">

@@ -45,7 +45,11 @@ fun ProjectDetailCard(
         modifier = modifier,
         shape = MyProjectsTheme.shapes.large,
         colors = CardDefaults.cardColors(
-            containerColor = project.color,
+            containerColor = if (project.hasDefaultBackgroundColor) {
+                MyProjectsTheme.colors.white
+            } else {
+                project.color
+            },
             contentColor = if (project.hasDefaultBackgroundColor) {
                 MyProjectsTheme.colors.black
             } else {
@@ -65,7 +69,9 @@ fun ProjectDetailCard(
             ProjectDetails(project)
 
             Surface(
-                modifier = Modifier.fillMaxWidth().height(177.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(177.dp),
                 shape = MyProjectsTheme.shapes.medium,
                 color = MyProjectsTheme.colors.grey1
             ) {
@@ -96,6 +102,7 @@ private fun ProjectDetails(project: Project) {
         IconWithText(
             icon = Icons.Outlined.CalendarMonth,
             text = project.dueDate,
+            textColor = MyProjectsTheme.colors.black,
             modifier = Modifier
                 .background(
                     color = MyProjectsTheme.colors.grey2,
@@ -110,6 +117,7 @@ private fun ProjectDetails(project: Project) {
         IconWithText(
             icon = Icons.Outlined.Comment,
             text = "${project.comments}",
+            textColor = MyProjectsTheme.colors.black,
             modifier = Modifier
                 .background(
                     color = MyProjectsTheme.colors.grey2,
@@ -124,6 +132,7 @@ private fun ProjectDetails(project: Project) {
         IconWithText(
             icon = Icons.Outlined.AttachFile,
             text = "${project.numberOfAttachments}",
+            textColor = MyProjectsTheme.colors.black,
             modifier = Modifier
                 .background(
                     color = MyProjectsTheme.colors.grey2,
