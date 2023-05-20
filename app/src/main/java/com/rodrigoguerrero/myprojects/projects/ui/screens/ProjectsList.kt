@@ -17,6 +17,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
+import com.rodrigoguerrero.myprojects.navigation.Destination
 import com.rodrigoguerrero.myprojects.projects.ui.components.MyProjectsTopBar
 import com.rodrigoguerrero.myprojects.projects.ui.components.ProjectDetailCard
 import com.rodrigoguerrero.myprojects.projects.ui.models.Priority
@@ -27,8 +30,18 @@ import com.rodrigoguerrero.myprojects.ui.theme.MyProjectsTheme
 import kotlinx.collections.immutable.PersistentList
 import kotlinx.collections.immutable.persistentListOf
 
+fun NavGraphBuilder.projectsListDestination() {
+    composable(Destination.ProjectsList.route) {
+        ProjectsList(
+            projects = persistentListOf(),
+            onMore = { },
+            onSearch = { }
+        )
+    }
+}
+
 @Composable
-fun ProjectsList(
+private fun ProjectsList(
     modifier: Modifier = Modifier,
     projects: PersistentList<Project>,
     onMore: () -> Unit,

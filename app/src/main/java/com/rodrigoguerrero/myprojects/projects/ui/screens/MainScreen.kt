@@ -11,7 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
 import com.rodrigoguerrero.myprojects.R
+import com.rodrigoguerrero.myprojects.navigation.Destination
 import com.rodrigoguerrero.myprojects.projects.ui.components.MainListHeader
 import com.rodrigoguerrero.myprojects.projects.ui.components.MainTopBar
 import com.rodrigoguerrero.myprojects.projects.ui.components.ProjectCard
@@ -23,8 +26,21 @@ import com.rodrigoguerrero.myprojects.ui.theme.MyProjectsTheme
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 
+fun NavGraphBuilder.mainScreenDestination() {
+    composable(Destination.Home.route) {
+        MainScreen(
+            name = "Vanessa",
+            numberOfNotifications = 0,
+            recentProjects = persistentListOf(),
+            todayTasks = persistentListOf(),
+            onViewAllProjects = { },
+            onViewAllTasks = { }
+        )
+    }
+}
+
 @Composable
-fun MainScreen(
+private fun MainScreen(
     modifier: Modifier = Modifier,
     name: String,
     numberOfNotifications: Int,

@@ -16,14 +16,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.rodrigoguerrero.myprojects.navigation.Destination
+import com.rodrigoguerrero.myprojects.navigation.navigateAndPopUp
 import com.rodrigoguerrero.myprojects.projects.ui.components.MainBottomBar
 import com.rodrigoguerrero.myprojects.projects.ui.screens.CreateProjectBottomSheet
-import com.rodrigoguerrero.myprojects.projects.ui.screens.MainScreen
-import com.rodrigoguerrero.myprojects.projects.ui.screens.ProjectsList
+import com.rodrigoguerrero.myprojects.projects.ui.screens.mainScreenDestination
+import com.rodrigoguerrero.myprojects.projects.ui.screens.projectsListDestination
 import com.rodrigoguerrero.myprojects.ui.theme.MyProjectsTheme
-import kotlinx.collections.immutable.persistentListOf
 
 @OptIn(ExperimentalMaterial3Api::class)
 class MainActivity : ComponentActivity() {
@@ -45,20 +45,12 @@ class MainActivity : ComponentActivity() {
                     Scaffold(
                         bottomBar = {
                             MainBottomBar(
-                                onListClick = { navController.navigate("home") {
-                                    navController.graph.startDestinationRoute?.let { route ->
-                                        popUpTo(route)
-                                        launchSingleTop = true
-                                        restoreState = true
-                                    }
-                                } },
-                                onTaskClick = { navController.navigate("projects") {
-                                    navController.graph.startDestinationRoute?.let { route ->
-                                        popUpTo(route)
-                                    }
-                                    launchSingleTop = true
-                                    restoreState = true
-                                } },
+                                onListClick = {
+                                    navController.navigateAndPopUp(Destination.Home.route)
+                                },
+                                onTaskClick = {
+                                    navController.navigateAndPopUp(Destination.ProjectsList.route)
+                                },
                                 onMessageClick = { },
                                 onProfileClick = { },
                                 onNewProjectClick = {
@@ -69,26 +61,11 @@ class MainActivity : ComponentActivity() {
                     ) { padding ->
                         NavHost(
                             navController = navController,
-                            startDestination = "home",
+                            startDestination = Destination.Home.route,
                             modifier = Modifier.padding(padding)
                         ) {
-                            composable("home") {
-                                MainScreen(
-                                    name = "Vanessa",
-                                    numberOfNotifications = 0,
-                                    recentProjects = persistentListOf(),
-                                    todayTasks = persistentListOf(),
-                                    onViewAllProjects = { navController.navigate("projects") },
-                                    onViewAllTasks = { }
-                                )
-                            }
-                            composable("projects") {
-                                ProjectsList(
-                                    projects = persistentListOf(),
-                                    onMore = { },
-                                    onSearch = { }
-                                )
-                            }
+                            mainScreenDestination()
+                            projectsListDestination()
                         }
 
                         if (showBottomSheet) {
@@ -100,7 +77,6 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                     }
-
                 }
             }
         }
