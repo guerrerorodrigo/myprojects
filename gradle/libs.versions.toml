@@ -1,5 +1,5 @@
 [versions]
-androidx-activity-compose-version = "1.7.1"
+androidx-activity-compose-version = "1.7.2"
 androidx-arch-core-testing-version = "2.2.0"
 androidx-compose-bom-version = "2023.05.01"
 androidx-compose-compiler-version = "1.4.7"
