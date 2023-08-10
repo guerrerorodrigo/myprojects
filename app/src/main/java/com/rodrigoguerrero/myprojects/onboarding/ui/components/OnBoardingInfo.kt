@@ -20,7 +20,7 @@ import com.rodrigoguerrero.myprojects.shared.ui.PagerProgressIndicator
 import com.rodrigoguerrero.myprojects.shared.ui.SecondaryButton
 import com.rodrigoguerrero.myprojects.ui.theme.MyProjectsTheme
 
-private const val onBoardingPages = 3
+internal const val onBoardingPages = 3
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -29,7 +29,7 @@ fun OnBoardingInfo(
     onSignUp: () -> Unit,
     onGetStarted: () -> Unit,
     modifier: Modifier = Modifier,
-    pagerState: PagerState = rememberPagerState()
+    pagerState: PagerState = rememberPagerState(pageCount = { onBoardingPages })
 ) {
 
     Surface(
@@ -47,10 +47,7 @@ fun OnBoardingInfo(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(MyProjectsTheme.padding.l)
         ) {
-            HorizontalPager(
-                pageCount = onBoardingPages,
-                state = pagerState
-            ) { page ->
+            HorizontalPager(state = pagerState) { page ->
 
                 val (titleRes, descriptionRes) = when (page) {
                     0 -> R.string.onboarding_title_1 to R.string.onboarding_description_1

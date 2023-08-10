@@ -15,6 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.rodrigoguerrero.myprojects.R
 import com.rodrigoguerrero.myprojects.onboarding.ui.components.OnBoardingInfo
+import com.rodrigoguerrero.myprojects.onboarding.ui.components.onBoardingPages
 import com.rodrigoguerrero.myprojects.ui.theme.MyProjectsTheme
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -25,7 +26,7 @@ fun OnBoardingScreen(
     onGetStarted: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val pagerState = rememberPagerState()
+    val pagerState = rememberPagerState(pageCount = { onBoardingPages })
     Column(
         modifier = modifier
             .fillMaxSize()
